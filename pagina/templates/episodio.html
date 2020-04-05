@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Episodio</title>
+    <link rel="shortcut icon" href="">
+</head>
+<body>
+<form id="searchform" action="{% url 'busqueda' %}" accept-charset="utf-8">
+      <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Buscar">
+    <button class="searchbutton" type="submit" t><i class="fa fa-search" ></i>Ir</button>
+    </form>
+
+
+<h1>Episodio</h1>
+
+
+
+<p> Nombre:  {{nombre }} </p><br>
+<p> Fecha al aire:  {{fecha_al_aire }} </p><br>
+<p> Episodio:  {{episodio}} </p><br>
+
+<p> Personajes: </p><br>
+
+
+<ul>
+{% for u,numero in personajes.items %}
+
+    <a href={% url 'personaje' ur=numero %}> {{u}} </a><br>
+
+
+
+
+{% endfor %}
+</ul>
+
+
+
+</body>
+</html>
